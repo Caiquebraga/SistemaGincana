@@ -5,16 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class GincanaParModel extends Model
+class Categoria extends Model
 {
     use HasFactory;
 
-    protected $table = 'participante';
+    protected $table = 'categoria';
 
-    protected $primaKey = 'parPk';
+    protected $primaryKey = 'catPk';
 
     protected $fillable = [
-        'parCpf',
-        'parNome'
+        'catNome',
+        'catDescricao'
     ];
 }

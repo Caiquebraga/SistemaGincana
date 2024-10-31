@@ -12,9 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('equipes', function (Blueprint $table) {
-            $table->bigIncrements('equpk');
+            $table->bigIncrements('equPk');
             $table->string('equCPF', 11)->unique();
-            $table->string('equDatCriacao');
+            $table->string('equNome');
             $table->string('equFot');
             $table->timestamps();
         });

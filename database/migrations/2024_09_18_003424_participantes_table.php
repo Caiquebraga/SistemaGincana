@@ -15,6 +15,9 @@ return new class extends Migration
             $table->bigIncrements('parPk');
             $table->string('parCPF', 14)->unique();
             $table->string('parNome');
+
+            $table->unsignedBigInteger('ParEquFk');
+            $table->foreign('ParEquFk')->references('equPk')->on('equipes')->onDelete('cascade');
         });
     }
 

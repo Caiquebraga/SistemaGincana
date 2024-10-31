@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\GincanaParController;
+use App\Http\Controllers\EquipeController;
+use App\Http\Controllers\ParticipanteController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,5 +20,10 @@ use App\Http\Controllers\GincanaParController;
 // });
 
 Route::prefix('GIN')->group(function(){
-    Route::get('/PAR', [GincanaParController::class, 'index']);
+    Route::get('/EQU', [EquipeController::class, 'index']);
+    Route::get('/PAR', [ParticipanteController::class, 'PartEquipes'])->name('partshowEqu');
+    Route::post('/NEWPAR', [ParticipanteController::class, 'create'])->name('adcNewPar');
+    Route::get('/EditParShow', [ParticipanteController::class, 'editshow'])->name('edtPar');
+    Route::put('/EditarSave', [ParticipanteController::class, 'update'])->name('saveEdit');
+    Route::delete('/DeletePar', [ParticipanteController::class, 'delete'])->name('deletePar');
 });
